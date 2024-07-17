@@ -1,0 +1,15 @@
+# REVERSE OF A NUMBER
+class Solution:
+    def reverse(self, x: int) -> int:
+        temp=abs(x)
+        rem=0
+        rev=0
+        while temp!=0:
+            remin=temp%10
+            temp=temp//10
+            rev=(rev*10)+remin
+        sign = -1 if x<0 else 1 
+        tar=sign*rev
+        if tar > 2 ** 31 - 1 or tar < -(2 ** 31):
+            return 0
+        return tar
