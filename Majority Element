@@ -1,0 +1,36 @@
+
+##########  finding the maximum element ######
+
+def majorityElement(self, nums: List[int]) -> int:
+        d={}
+        s1=set(nums)
+        s1=list(s1)
+        for i in s1:
+            s=0
+            for j in range(len(nums)):
+                if nums[j]==i:
+                    s+=1
+            d[i]=s
+        print(d.items())
+        max=0
+        max_key=0
+        for key,value in d.items():
+            if value>max:
+                max=value
+                max_key=key
+        print(max_key)
+        return max_key
+
+
+"""
+Example 1:
+
+Input: nums = [3,2,3]
+Output: 3
+Example 2:
+
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+
+"""
+            
